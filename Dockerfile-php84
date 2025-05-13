@@ -6,7 +6,6 @@ LABEL org.opencontainers.image.authors="Vitalii Mikhnevych <blackrooty#gmail.com
 LABEL org.opencontainers.image.source="https://github.com/rooty/nginx-php84-alpine"
 LABEL org.opencontainers.image.description="Lightweight container with Nginx & PHP-FPM 8.4 based on Alpine Linux."
 LABEL org.opencontainers.image.licenses=MIT
-LABEL org.opencontainers.image.tags=php84
 
 # Install packages
 RUN apk --no-cache add \

@@ -3,41 +3,41 @@ ARG ARCH=
 FROM ${ARCH}alpine:3.21
 
 LABEL org.opencontainers.image.authors="Vitalii Mikhnevych <blackrooty#gmail.com>"
-LABEL org.opencontainers.image.source="https://github.com/rooty/nginx-php84-alpine"
+LABEL org.opencontainers.image.source="https://github.com/rooty/nginx-php7-alpine"
 LABEL org.opencontainers.image.description="Lightweight container with Nginx & PHP-FPM 8.4 based on Alpine Linux."
 LABEL org.opencontainers.image.licenses=MIT
 
 # Install packages
 RUN apk --no-cache add \
-        php84 \
-        php84-ctype \
-        php84-curl \
-        php84-dom \
-        php84-exif \
-        php84-fileinfo \
-        php84-fpm \
-        php84-gd \
-        php84-iconv \
-        php84-intl \
-        php84-json \
-        php84-mbstring \
-        php84-mysqli \
-        php84-opcache \
-        php84-openssl \
-        php84-pecl-apcu \
-        php84-pdo \
-        php84-pdo_mysql \
-        php84-pgsql \
-        php84-phar \
-        php84-session \
-        php84-simplexml \
-        php84-soap \
-        php84-sodium \
-        php84-tokenizer \
-        php84-xml \
-        php84-xmlreader \
-        php84-zip \
-        php84-zlib \
+        php7 \
+        php7-ctype \
+        php7-curl \
+        php7-dom \
+        php7-exif \
+        php7-fileinfo \
+        php7-fpm \
+        php7-gd \
+        php7-iconv \
+        php7-intl \
+        php7-json \
+        php7-mbstring \
+        php7-mysqli \
+        php7-opcache \
+        php7-openssl \
+        php7-pecl-apcu \
+        php7-pdo \
+        php7-pdo_mysql \
+        php7-pgsql \
+        php7-phar \
+        php7-session \
+        php7-simplexml \
+        php7-soap \
+        php7-sodium \
+        php7-tokenizer \
+        php7-xml \
+        php7-xmlreader \
+        php7-zip \
+        php7-zlib \
         nginx \
         runit \
         curl \
