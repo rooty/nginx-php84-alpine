@@ -64,7 +64,6 @@ jobs:
           #${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           tags: |
             ${{ steps.meta.outputs.tags }}
-            ${{ steps.meta.outputs.tags }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
       
