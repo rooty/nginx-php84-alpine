@@ -27,9 +27,9 @@ jobs:
       matrix:
         include:
           - dockerfile: Dockerfile-php84
-            image: ghcr.io/rooty/nginx-php8-alpine
+            image: ${{ github.repository }}:php8
           - dockerfile: Dockerfile-php7
-            image: ghcr.io/rooty/nginx-php7-alpine
+            image: ${{ github.repository }}:php7
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
