@@ -62,10 +62,11 @@ RUN apk --no-cache --update  add \
 # Remove alpine cache
     && rm -rf /var/cache/apk/* \
 # Remove default server definition
-    && rm /etc/nginx/http.d/default.conf \
+    && rm /etc/nginx/http.d/default.conf || exit 0 
+    #\
 # Make sure files/folders needed by the processes are accessable when they run under the nobody user
-    && mkdir -p /run /var/lib/nginx /var/www/html /var/log/nginx \
-    && chown -R nobody:nobody /run /var/lib/nginx /var/www/html /var/log/nginx
+    #&& mkdir -p /run /var/lib/nginx /var/www/html /var/log/nginx \
+    #&& chown -R nobody:nobody /run /var/lib/nginx /var/www/html /var/log/nginx
 
 # Add configuration files
 COPY --chown=nobody rootfs/ /
