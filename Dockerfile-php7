@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.description="Lightweight container with Nginx & P
 LABEL org.opencontainers.image.licenses=MIT
 
 # Install packages
-RUN apk --no-cache add \
+RUN apk --no-cache --update  add \
         php7 \
         php7-cli \
         php7-fpm \
@@ -82,7 +82,6 @@ EXPOSE 8080
 # Let runit start nginx & php-fpm
 # Ensure /bin/docker-entrypoint.sh is always executed
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]
-
 
 # Configure a healthcheck to validate that everything is up&running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping || exit 1
