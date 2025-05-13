@@ -1,0 +1,1 @@
+# Docker PHP-FPM 8.4 & Nginx 1.26 on Alpine Linux 3.21
