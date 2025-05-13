@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG ARCH=
-FROM ${ARCH}alpine:3.21
+FROM ${ARCH}alpine:3.8
 
 LABEL org.opencontainers.image.authors="Vitalii Mikhnevych <blackrooty#gmail.com>"
 LABEL org.opencontainers.image.source="https://github.com/rooty/nginx-php7-alpine"
@@ -10,6 +10,8 @@ LABEL org.opencontainers.image.licenses=MIT
 # Install packages
 RUN apk --no-cache add \
         php7 \
+        php7-cli \
+        php7-fpm \
         php7-ctype \
         php7-curl \
         php7-dom \
@@ -24,7 +26,7 @@ RUN apk --no-cache add \
         php7-mysqli \
         php7-opcache \
         php7-openssl \
-        php7-pecl-apcu \
+        php7-apcu \
         php7-pdo \
         php7-pdo_mysql \
         php7-pgsql \
