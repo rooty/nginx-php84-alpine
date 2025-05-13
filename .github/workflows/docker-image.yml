@@ -27,9 +27,11 @@ jobs:
       matrix:
         include:
           - dockerfile: Dockerfile-php84
-            image: ${{ github.repository }}:php8
+            image: ${{ github.repository }}
+            tags: php8
           - dockerfile: Dockerfile-php7
-            image: ${{ github.repository }}:php7
+            image: ${{ github.repository }}
+            tags: php7
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
