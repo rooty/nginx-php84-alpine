@@ -3,8 +3,8 @@ ARG ARCH=
 FROM ${ARCH}alpine:3.21
 
 LABEL org.opencontainers.image.authors="Vitalii Mikhnevych <blackrooty#gmail.com>"
-LABEL org.opencontainers.image.source="https://github.com/rooty/alpine-php-webserver"
-LABEL org.opencontainers.image.description="Lightweight container with Nginx & PHP-FPM based on Alpine Linux."
+LABEL org.opencontainers.image.source="https://github.com/rooty/nginx-php84-alpine"
+LABEL org.opencontainers.image.description="Lightweight container with Nginx & PHP-FPM 8.4 based on Alpine Linux."
 LABEL org.opencontainers.image.licenses=MIT
 
 # Install packages
