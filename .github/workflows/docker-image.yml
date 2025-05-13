@@ -27,9 +27,13 @@ jobs:
       matrix:
         include:
           - dockerfile: Dockerfile-php84
-            image: ghcr.io/rooty/nginx-php84
+            image: ghcr.io/rooty/nginx-php84-alpine
+            tags: |
+              8.4
           - dockerfile: Dockerfile-php7
-            image: ghcr.io/rooty/nginx-php7
+            image: ghcr.io/rooty/nginx-php84-alpine
+            tags: |
+              7.4
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -60,7 +64,6 @@ jobs:
           #file: Dockerfile-php84
           file: ${{ matrix.dockerfile }}
           push: true
-
           #${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           tags: |
             ${{ steps.meta.outputs.tags }}
