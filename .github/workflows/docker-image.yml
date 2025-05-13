@@ -60,8 +60,9 @@ jobs:
           #file: Dockerfile-php84
           file: ${{ matrix.dockerfile }}
           push: true
+
+          #${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           tags: |
-            #${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ steps.meta.outputs.tags }}
             ${{ steps.meta.outputs.tags }}:latest
           labels: ${{ steps.meta.outputs.labels }}
