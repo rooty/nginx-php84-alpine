@@ -3,7 +3,7 @@ name: Create and publish a Docker image
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
-    #branches: ['dev']
+    branches: ['main']
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -27,11 +27,7 @@ jobs:
       matrix:
         include:
           - dockerfile: Dockerfile-php84
-            image: ${{ github.repository }}
-            tags: php8
-          - dockerfile: Dockerfile-php7
-            image: ${{ github.repository }}
-            tags: php7
+            image: ghcr.io/rooty/nginx-php7-alpine:php84
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
