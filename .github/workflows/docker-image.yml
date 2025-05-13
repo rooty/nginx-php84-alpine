@@ -54,7 +54,7 @@ jobs:
           push: true          
           tags: |
             ${{ steps.meta.outputs.tags }}
-            latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           annotations: ${{ steps.meta.outputs.annotations }}
       
