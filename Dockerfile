@@ -57,6 +57,14 @@ RUN apk --no-cache add \
     && apk add --no-cache $runDeps \
     && apk del .gettext \
     && mv /tmp/envsubst /usr/local/bin/ \
+    # --- Начало добавления Composer ---
+    # Скачиваем Composer
+    && curl -sS https://getcomposer.org/installer | php84 -- --install-dir=/usr/local/bin --filename=composer \
+    # Устанавливаем необходимые зависимости для Composer, если они еще не установлены
+    && php84 -r "copy('https://composer.github.io/installer.sig', 'composer.sig');" \
+    && php84 -r "if (hash_file('sha384', 'composer-setup.php') === file_get_contents('composer.sig')) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \
+    && rm composer.sig \
+# --- Конец добавления Composer ---
 # Remove alpine cache
     && rm -rf /var/cache/apk/* \
 # Remove default server definition
