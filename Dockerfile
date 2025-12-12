@@ -38,6 +38,10 @@ RUN apk --no-cache add \
         php84-xmlreader \
         php84-zip \
         php84-zlib \
+        php84-sockets \
+        php84-xmlwriter \
+        php-pecl-amqp \
+        icu-data-full \
         nginx \
         runit \
         curl \
